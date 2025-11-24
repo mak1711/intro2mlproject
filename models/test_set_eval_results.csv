@@ -1,0 +1,42 @@
+model_folder,mode,model_type,accuracy,params,notes
+ablation_aug,custom,ablation_aug,0.18031854379977247,2138889,
+ablation_cum_1,custom,ablation_cum_1,0.18031854379977247,2138889,
+ablation_cum_2,custom,ablation_cum_2,0.16609783845278725,2138889,
+ablation_cum_3,custom,ablation_cum_3,0.19112627986348124,2138889,
+ablation_cum_4,custom,ablation_cum_4,0.20136518771331058,2138889,
+ablation_cum_5,custom,ablation_cum_5,0.09328782707622298,2138889,
+ablation_dropout,custom,ablation_dropout,0.11205915813424346,2138889,
+ablation_gradclip,custom,ablation_gradclip,0.1075085324232082,2138889,
+ablation_label,custom,ablation_label,0.12514220705346984,2138889,
+ablation_spm,failed,ablation_spm,0.0,0,Checkpoint does not contain `vocab`
+ablation_wd,custom,ablation_wd,0.11604095563139932,2138889,
+augment_schedule_test,custom,augment_schedule_test,0.1075085324232082,2138889,
+baseline_fixed,custom,baseline_fixed,0.11660978384527873,2138889,
+commands_word,custom,commands_word,0.10637087599544938,280201,
+ensemble/distil-mbert,pretrained,distil-mbert,0.3503981797497156,135331593,
+ensemble/distil-mbert2,failed,distil-mbert2,0.0,0,Checkpoint does not contain `label_map`
+ensemble/distilbert,pretrained,distilbert,1.0,66960393,
+ensemble/distilbert2,failed,distilbert2,0.0,0,Checkpoint does not contain `label_map`
+ensemble/mdeberta,pretrained,mdeberta,1.0,139199241,
+ensemble/mdeberta2,failed,mdeberta2,0.0,0,Checkpoint does not contain `label_map`
+grid_run_1,custom,grid_run_1,0.09328782707622298,280201,
+grid_run_2,custom,grid_run_2,0.09328782707622298,2138889,
+grid_run_3,custom,grid_run_3,0.09328782707622298,4769033,
+grid_run_4,custom,grid_run_4,0.11660978384527873,808329,
+grid_run_5,custom,grid_run_5,0.09328782707622298,1611785,
+grid_run_6,custom,grid_run_6,0.09328782707622298,3979273,
+isolated_noaug_gradclip,custom,isolated_noaug_gradclip,0.09328782707622298,2138889,
+mild_reg_2ep,custom,mild_reg_2ep,1.0,2441225,
+no_aug,custom,no_aug,0.09328782707622298,2138889,
+recommended_2ep,custom,recommended_2ep,0.10523321956769056,2138889,
+recommended_6ep,custom,recommended_6ep,0.10523321956769056,2138889,
+regularized_2ep,custom,regularized_2ep,0.1075085324232082,2138889,
+spm_grid_run_2,failed,spm_grid_run_2,0.0,0,Checkpoint does not contain `vocab`
+spm_grid_run_5,failed,spm_grid_run_5,0.0,0,Checkpoint does not contain `vocab`
+test_grad_dropout,custom,test_grad_dropout,0.11376564277588168,2138889,
+test_grad_label,custom,test_grad_label,0.13310580204778158,2138889,
+test_run,custom,test_run,0.08418657565415244,313865,
+test_run_amp,custom,test_run_amp,0.08418657565415244,313865,
+test_run_deeper,custom,test_run_deeper,0.12400455062571103,2472457,
+transformer_aug,custom,transformer_aug,0.09328782707622298,280201,
+models/mild_reg_2ep,custom,mild_reg_2ep,1.0,2441225,

@@ -1,0 +1,9 @@
+do_a_trick	0
+go_back	1
+go_forward	2
+go_left	3
+go_right	4
+no_meaning	5
+sit	6
+stand	7
+turn_around	8
