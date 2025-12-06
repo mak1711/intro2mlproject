@@ -4,6 +4,9 @@ from torch.utils.data import Dataset, DataLoader
 import sentencepiece as spm
 from pathlib import Path
 from .othermodels import TextCNN, BiLSTM, CNN_BiLSTM  # your model definitions
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -113,18 +116,25 @@ def main():
         acc, preds, labels = evaluate_model(model, test_loader)
         print(f"{model_name} Test Accuracy: {acc:.4f}")
 
-        # Optional: confusion matrix
-        from sklearn.metrics import confusion_matrix
-        import seaborn as sns
-        import matplotlib.pyplot as plt
-
+        # -------------------------------
+        # High-quality confusion matrix
+        # -------------------------------
         cm = confusion_matrix(labels, preds)
+        save_dir = model_folder / model_name / "plots"
+        save_dir.mkdir(parents=True, exist_ok=True)
+
         plt.figure(figsize=(8,6))
-        sns.heatmap(cm, annot=True, fmt="d")
+        sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
         plt.title(f"{model_name} Confusion Matrix")
         plt.xlabel("Predicted")
         plt.ylabel("True")
-        plt.show()
+        plt.tight_layout()
+
+        # Save in high-quality formats
+        plt.savefig(save_dir / f"{model_name}_confusion_matrix.png", dpi=400, bbox_inches="tight")
+        plt.savefig(save_dir / f"{model_name}_confusion_matrix.pdf", bbox_inches="tight")
+        plt.savefig(save_dir / f"{model_name}_confusion_matrix.svg", bbox_inches="tight")
+        plt.close()
 
 
 if __name__ == "__main__":

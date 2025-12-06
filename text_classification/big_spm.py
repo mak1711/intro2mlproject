@@ -6,9 +6,9 @@ import sentencepiece as spm
 SPM_VOCAB_SIZE = 1500
 SPM_MODEL_PREFIX = "spm_en_ar_joint"
 TMP_TEXT_FILE = "spm_input.txt"
-FINE_TUNE_INPUT_CSV = "/home/kan/ML/data/updated_data2.csv"  # your commands CSV
-EN_FILE = "/home/kan/ML/data/eng_sentences.tsv"
-AR_FILE = "/home/kan/ML/data/ara_sentences.tsv"
+FINE_TUNE_INPUT_CSV = "data/updated_data2.csv"  # your commands CSV
+EN_FILE = "data/eng_sentences.tsv"
+AR_FILE = "data/ara_sentences.tsv"
 
 # === STEP 1: Load English + Arabic sentences from TSV (no header) ===
 df_en = pd.read_csv(EN_FILE, sep="\t", header=None)

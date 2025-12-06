@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Load CSVs
-texts_csv = pd.read_csv("/home/kan/ML/text_classification/label5_texts.csv")  # only text column
-data_csv = pd.read_csv("/home/kan/ML/data/augmented.csv")  # full dataset with text + label
+texts_csv = pd.read_csv("text_classification/label5_texts.csv")  # only text column
+data_csv = pd.read_csv("data/augmented.csv")  # full dataset with text + label
 
 # Get indices of rows where label == 8
 label8_indices = data_csv[data_csv['label'] == 8].index

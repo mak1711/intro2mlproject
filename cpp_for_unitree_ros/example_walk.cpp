@@ -65,7 +65,7 @@ int main(int argc, char **argv)
         
         
         
-	if (command==0)
+	if (command==7)
 	{
 	motiontime += 2;
 	
@@ -110,13 +110,17 @@ int main(int argc, char **argv)
         }
         if (motiontime > 13000 && motiontime < 14000)
         {
-            high_cmd_ros.mode = 0;
+            high_cmd_ros.mode = 1;
+        }
+        if (motiontime > 14000 && motiontime < 15000)
+        {
+            high_cmd_ros.mode = 11;
         }
         }
         
         
         
-        if (command==2)
+        if (command==0)
         {
         motiontime2 += 2;
         motiontime1 = 0;
@@ -128,13 +132,15 @@ int main(int argc, char **argv)
         motiontime7 = 0;
         motiontime8 = 0;
         
-        if (motiontime2 > 0 && motiontime2 < 8000)
+        if (motiontime2 > 0 && motiontime2 < 4000)
         {
             high_cmd_ros.mode = 2;
             high_cmd_ros.gaitType = 2;
             high_cmd_ros.velocity[0] = 0.4f; // -1  ~ +1
-            high_cmd_ros.footRaiseHeight = 0.1;
+            
             // printf("walk\n");
+        }else{
+        high_cmd_ros.mode = 1;
         }
         }
         
@@ -153,19 +159,21 @@ int main(int argc, char **argv)
         motiontime6 = 0;
         motiontime7 = 0;
         motiontime8 = 0;
-        if (motiontime1 > 0 && motiontime1 < 8000)
+        if (motiontime1 > 0 && motiontime1 < 4000)
         {
             high_cmd_ros.mode = 2;
             high_cmd_ros.gaitType = 2;
             high_cmd_ros.velocity[0] = -0.4f; // -1  ~ +1
-            high_cmd_ros.footRaiseHeight = 0.1;
+            
             // printf("walk\n");
+        }else{
+        high_cmd_ros.mode = 1;
         }
         }
         
         
         
-        if (command==3)
+        if (command==2)
         {
         motiontime3 += 2;
         motiontime1 = 0;
@@ -177,13 +185,15 @@ int main(int argc, char **argv)
         motiontime7 = 0;
         motiontime8 = 0;
         
-        if (motiontime3 > 0 && motiontime3 < 8000)
+        if (motiontime3 > 0 && motiontime3 < 4000)
         {
             high_cmd_ros.mode = 2;
             high_cmd_ros.gaitType = 2;
             high_cmd_ros.velocity[1] = 0.4f; // -1  ~ +1
-            high_cmd_ros.footRaiseHeight = 0.1;
+        
             // printf("walk\n");
+        }else{
+        high_cmd_ros.mode = 1;
         }
         }
         
@@ -191,7 +201,7 @@ int main(int argc, char **argv)
         
         
         
-        if (command==4)
+        if (command==3)
         {
         motiontime4 += 2;
         motiontime1 = 0;
@@ -203,19 +213,21 @@ int main(int argc, char **argv)
         motiontime7 = 0;
         motiontime8 = 0;
         
-        if (motiontime4 > 0 && motiontime4 < 8000)
+        if (motiontime4 > 0 && motiontime4 < 4000)
         {
             high_cmd_ros.mode = 2;
             high_cmd_ros.gaitType = 2;
             high_cmd_ros.velocity[1] = -0.4f; // -1  ~ +1
-            high_cmd_ros.footRaiseHeight = 0.1;
+           
             // printf("walk\n");
+        }else{
+        high_cmd_ros.mode = 1;
         }
         }
         
         
         
-        if (command==6)
+        if (command==4)
         {
         motiontime6 += 2;
         motiontime1 = 0;
@@ -240,29 +252,24 @@ int main(int argc, char **argv)
         
         
         
-        if (command==5)
+        if (command==8)
         {
-        high_cmd_ros.head[0] = 0xFE;
-        high_cmd_ros.head[1] = 0xEF;
-        high_cmd_ros.levelFlag = HIGHLEVEL;
+        motiontime7 = 0;
+        motiontime1 = 0;
+        motiontime2 = 0;
+        motiontime3 = 0;
+        motiontime4 = 0;
+        motiontime5 = 0;
+        motiontime6 = 0;
+        motiontime = 0;
+        motiontime8 = 0;
         high_cmd_ros.mode = 0;
-        high_cmd_ros.gaitType = 0;
-        high_cmd_ros.speedLevel = 0;
-        high_cmd_ros.footRaiseHeight = 0;
-        high_cmd_ros.bodyHeight = 0;
-        high_cmd_ros.euler[0] = 0;
-        high_cmd_ros.euler[1] = 0;
-        high_cmd_ros.euler[2] = 0;
-        high_cmd_ros.velocity[0] = 0.0f;
-        high_cmd_ros.velocity[1] = 0.0f;
-        high_cmd_ros.yawSpeed = 0.0f;
-        high_cmd_ros.reserve = 0;
         }
         
         
         
         
-        if (command==7)
+        if (command==5)
         {
         motiontime7 += 2;
         motiontime1 = 0;
@@ -275,13 +282,13 @@ int main(int argc, char **argv)
         motiontime8 = 0;
         
         
-            high_cmd_ros.mode = 1;
+            high_cmd_ros.mode = 6;
             
         
         }
         
         
-        if (command==8)
+        if (command==6)
         {
         motiontime8 += 2;
         motiontime1 = 0;
@@ -293,13 +300,15 @@ int main(int argc, char **argv)
         motiontime7 = 0;
         motiontime = 0;
         
-        if (motiontime8 > 0 && motiontime8 < 8000)
+        if (motiontime8 > 0 && motiontime8 < 1000)
         {
             high_cmd_ros.mode = 2;
             high_cmd_ros.gaitType = 2;
             high_cmd_ros.yawSpeed = 2;
-            high_cmd_ros.footRaiseHeight = 0.1;
+          
             // printf("walk\n");
+        }else{
+        high_cmd_ros.mode = 1;
         }
         }
         

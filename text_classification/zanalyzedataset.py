@@ -2,7 +2,7 @@ import pandas as pd
 from collections import Counter
 
 # --------- CONFIGURATION ---------
-csv_file = "/home/kan/ML/data/robot_commands_no_mixed_language.csv"  # <-- Replace with your CSV
+csv_file = "data/robot_commands_no_mixed_language.csv"  # <-- Replace with your CSV
 text_col = "text"                      # Column name containing the text
 label_col = "label"                    # Column name containing labels
 # ---------------------------------

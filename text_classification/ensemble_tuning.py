@@ -10,8 +10,8 @@ import subprocess
 import json
 
 # --------------------- Settings ---------------------
-CSV_PATH = "/home/kan/ML/data/updated_data.csv"  # path to your dataset
-OUT_DIR = "/home/kan/ML/models/freeze_experiments"
+CSV_PATH = "data/updated_data.csv"  # path to your dataset
+OUT_DIR = "models/freeze_experiments"
 EPOCHS = 7
 BATCH_SIZE = 16
 MAX_LEN = 128

@@ -155,7 +155,9 @@ def test_models(model_paths, test_csv_path, text_col='text', label_col='label',
         plt.xlabel("Predicted")
         plt.ylabel("True")
         plt.tight_layout()
-        plt.savefig(model_save_dir / "confusion_matrix.png")
+        plt.savefig(model_save_dir / "confusion_matrix.png", dpi=400, bbox_inches="tight")
+        plt.savefig(model_save_dir / "confusion_matrix.pdf", dpi=400, bbox_inches="tight")
+        plt.savefig(model_save_dir / "confusion_matrix.svg", bbox_inches="tight")
         plt.close()
 
         # Save accuracy for the global plot
@@ -180,7 +182,11 @@ def test_models(model_paths, test_csv_path, text_col='text', label_col='label',
     plt.legend()
     plt.grid()
     plt.tight_layout()
-    plt.savefig(save_root / "accuracy_vs_freeze.png")
+
+    # Save in high-quality
+    plt.savefig(save_root / "accuracy_vs_freeze.png", dpi=400, bbox_inches="tight")
+    plt.savefig(save_root / "accuracy_vs_freeze.pdf", dpi=400, bbox_inches="tight")
+    plt.savefig(save_root / "accuracy_vs_freeze.svg", bbox_inches="tight")
     plt.close()
 
     return acc_table
@@ -198,7 +204,7 @@ if __name__ == "__main__":
     for p in model_paths:
         print(p)
 
-    test_csv_path = "/home/kan/ML/data/test_set.csv"
+    test_csv_path = "data/test_set.csv"
 
     results = test_models(model_paths, test_csv_path)
     print("\nSummary:", results)

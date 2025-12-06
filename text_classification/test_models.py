@@ -14,8 +14,8 @@ from text_classification.spmpredict import (
 # ---------------------------------------------------
 # CONFIG
 # ---------------------------------------------------
-TEST_CSV = "/home/kan/ML/data/test_set.csv"
-MODELS_ROOT = "/home/kan/ML/models/model_search2"
+TEST_CSV = "data/test_set.csv"
+MODELS_ROOT = "models/model_search2"
 MAX_LEN = 32
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # ---------------------------------------------------
